@@ -13,9 +13,13 @@ main();
 
 function showUserPosts(id) {
   localStorage.setItem("id", id);
-  window.location.href = `${window.location.origin}/user.html`;
-  window.location.href = "./user.html";
+
+  const basePath = window.location.hostname === "mike-innella.github.io" ? "/firstAPI/" : "/";
+
+  window.location.href = `${window.location.origin}${basePath}user.html`;
 }
+
+
 
 function userHTML(user) {
   return `
@@ -30,3 +34,4 @@ function userHTML(user) {
     </div>
   </div>`;
 }
+
